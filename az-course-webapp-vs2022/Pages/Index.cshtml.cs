@@ -14,7 +14,7 @@ namespace az_course_webapp_vs2022.Pages
 
         public void OnGet()
         {
-
+            throw new Exception("Test Application Insights");
         }
     }
 }
