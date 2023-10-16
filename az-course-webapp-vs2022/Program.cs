@@ -1,4 +1,11 @@
+using az_course_webapp_vs2022.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+string? azureSqlConnectionString = builder.Configuration.GetConnectionString("AzureSqlConnectionString");
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(azureSqlConnectionString));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
